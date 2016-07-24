@@ -10,12 +10,10 @@ import static org.junit.Assert.*;
 public class PlayerTest {
     @Test
     public void createPlayersCreatesTheCorrectNumberOfPlayers() {
-        War war = new War();
-
         List<Player> players = Player.createPlayers(3);
 
         assertEquals(players.size(), 3);
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 3; i++) {
             assertEquals(players.get(i).playerNumber, i);
         }
     }
