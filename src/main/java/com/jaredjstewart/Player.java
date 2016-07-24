@@ -1,5 +1,8 @@
 package com.jaredjstewart;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Player {
     Pile hand;
     Pile wonPile;
@@ -37,5 +40,13 @@ public class Player {
 
     public int cardsRemaining() {
         return hand.size() + wonPile.size();
+    }
+
+    public static List<Player> createPlayers(int numberOfPlayers) {
+        List<Player> players = new ArrayList<Player>(numberOfPlayers);
+        for (int i = 0; i < numberOfPlayers; i++) {
+            players.add(new Player(i));
+        }
+        return players;
     }
 }

@@ -17,7 +17,7 @@ public class War {
 
     public void play(int numberOfSuits, int numberOfRanks, int numberOfPlayers) {
         Deck deck = new Deck(numberOfSuits, numberOfRanks);
-        remainingPlayers = createPlayers(numberOfPlayers);
+        remainingPlayers = Player.createPlayers(numberOfPlayers);
         Dealer.deal(deck, remainingPlayers);
 
         while (remainingPlayers.size() > 1) {
@@ -85,7 +85,7 @@ public class War {
                 .get();
     }
 
-    private HashMap<Player, Card> playCards() {
+    protected HashMap<Player, Card> playCards() {
         removePlayersWhoRanOutOfCards();
 
         HashMap<Player, Card> cardsPlayed = new HashMap<>(remainingPlayers.size());
@@ -102,11 +102,5 @@ public class War {
         remainingPlayers.removeAll(remainingPlayers.stream().filter(player -> !player.hasCards()).collect(Collectors.toList()));
     }
 
-    private List<Player> createPlayers(int numberOfPlayers) {
-        List<Player> players = new ArrayList<Player>(numberOfPlayers);
-        for (int i = 0; i < numberOfPlayers; i++) {
-            players.add(new Player(i));
-        }
-        return players;
-    }
+
 }

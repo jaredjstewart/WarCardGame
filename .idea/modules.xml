@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/warCardGame.iml" filepath="$PROJECT_DIR$/.idea/modules/warCardGame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/WarCardGame.iml" filepath="$PROJECT_DIR$/.idea/modules/WarCardGame.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/warCardGame_main.iml" filepath="$PROJECT_DIR$/.idea/modules/warCardGame_main.iml" group="warCardGame" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/warCardGame_test.iml" filepath="$PROJECT_DIR$/.idea/modules/warCardGame_test.iml" group="warCardGame" />
     </modules>
