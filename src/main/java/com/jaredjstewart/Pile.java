@@ -5,9 +5,9 @@ import java.util.Collections;
 import java.util.LinkedList;
 
 public class Pile {
-    private LinkedList<Card> cards ;
+    private LinkedList<Card> cards;
 
-    public Pile () {
+    public Pile() {
         cards = new LinkedList<>();
     }
 

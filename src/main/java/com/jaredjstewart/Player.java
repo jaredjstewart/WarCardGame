@@ -1,13 +1,14 @@
 package com.jaredjstewart;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Player {
-    Pile hand;
-    Pile wonPile;
+    private Pile hand;
+    private Pile wonPile;
 
-    int playerNumber;
+    public final int playerNumber;
 
     public Card playCard() {
         if (!hasCards()) {
@@ -21,10 +22,14 @@ public class Player {
         return hand.drawCard();
     }
 
-    public void pickUp(Pile pile) {
+    public void pickUpCardsWon(Pile pile) {
         while (!pile.isEmpty()) {
             wonPile.add(pile.drawCard());
         }
+    }
+
+    public void pickUpCardDealt(Card card) {
+        hand.add(card);
     }
 
     public boolean hasCards() {
@@ -43,10 +48,8 @@ public class Player {
     }
 
     public static List<Player> createPlayers(int numberOfPlayers) {
-        List<Player> players = new ArrayList<Player>(numberOfPlayers);
-        for (int i = 0; i < numberOfPlayers; i++) {
-            players.add(new Player(i));
-        }
-        return players;
+        return IntStream.range(0, numberOfPlayers)
+                .mapToObj(Player::new)
+                .collect(Collectors.toList());
     }
 }

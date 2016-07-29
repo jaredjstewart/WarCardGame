@@ -2,13 +2,12 @@ package com.jaredjstewart;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-class DealerTest {
+public class DealerTest {
 
     @Test
     public void dealerDealsProperly() {
@@ -17,7 +16,7 @@ class DealerTest {
 
         Dealer.deal(deck, players);
 
-        assertEquals(players.get(0).cardsRemaining(), 26);
-        assertEquals(players.get(1).cardsRemaining(), 26);
+        assertEquals( 26, players.get(0).cardsRemaining());
+        assertEquals( 26, players.get(1).cardsRemaining());
     }
 }
